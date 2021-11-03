@@ -1,33 +1,31 @@
 const net = require("net");
 
 const connect = function() {
-  const conn = net.createConnection({
+  const client = net.createConnection({
     host: "165.227.47.243",
     port: 50541
   });
   
-  conn.on("connect", () => {
+  client.on("connect", () => {
     console.log("you are connected");
   });
 
 
-  conn.on("connect", () => {
-    conn.write("Name: MUG");
+  client.on("connect", () => {
+    client.write("Name: MUG");
     // conn.write("Move: up"); ///this allows our client to send stuff to the server
   });
-  0;
 
-  conn.on('data', (message) => { // this is how we receive
-    console.log(`Server says: ${message}`);
+
+  client.on('data', (message) => { // this is how we receive data from the server
+    console.log(`Server says: ${message}`); //console.logs message froms server
   });
   
   
-
-
   // interpret incoming data as text
-  conn.setEncoding("utf8");
+  client.setEncoding("utf8");
 
-  return conn;
+  return client;
 
   
 };
