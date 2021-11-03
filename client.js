@@ -10,14 +10,20 @@ const connect = function() {
     console.log("you are connected");
   });
 
+
   conn.on("connect", () => {
     conn.write("Name: MUG");
-
+    // conn.write("Move: up"); ///this allows our client to send stuff to the server
   });
+  0;
+
   conn.on('data', (message) => { // this is how we receive
     console.log(`Server says: ${message}`);
   });
   
+  
+
+
   // interpret incoming data as text
   conn.setEncoding("utf8");
 
@@ -25,4 +31,5 @@ const connect = function() {
 
   
 };
+
 module.exports = { connect };
