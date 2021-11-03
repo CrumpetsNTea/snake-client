@@ -8,17 +8,11 @@ const connect = function() {
   
   client.on("connect", () => {
     console.log("you are connected");
-  });
-
-
-  client.on("connect", () => {
     client.write("Name: MUG");
-    // conn.write("Move: up"); ///this allows our client to send stuff to the server
   });
 
-
-  client.on('data', (message) => { // this is how we receive data from the server
-    console.log(`Server says: ${message}`); //console.logs message froms server
+  client.on('data', (data) => { // this is how we receive data from the server
+    console.log(`Server says: ${data}`); //console.logs data froms server
   });
   
   
