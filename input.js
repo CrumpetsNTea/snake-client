@@ -1,3 +1,5 @@
+const { client } = require("./constants");
+
 // setup interface to handle user input from stdin
 let connection;
 
