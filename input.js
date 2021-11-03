@@ -28,7 +28,7 @@ const handleUserInput = function(data) {
     connection.write("Move: right");
   }
   if (data === "q") {
-    connection.write("GIT GUD");
+    connection.write("Say: SSS");
   }
 };
 module.exports = { setupInput };
